@@ -2,7 +2,7 @@ const readme = Vue.component('',{
     template:'#readme-template',
     data(){
         return{
-            introduction :'主要做安卓APP,Java相关和前后端。下面是之前做过的项目，需要写英文报告的也没问题',
+            introduction :'生活所迫，出来代做。主要做安卓APP,Java相关和前后端。下面是之前做过的项目，需要写英文报告的也没问题',
             contact : {
                 qq : '1587915719',
                 email : '1587915719@qq.com'
@@ -92,6 +92,48 @@ const cruddyPizza = Vue.component('',{
         }
     }
 })
+
+const runningTracker = Vue.component('',{
+    template: '#project-template',
+    data(){
+        return{
+            title : 'Running tracker',
+            describeLists:[
+                {describe : '用户移动时记录其运动情况'},
+                {describe : '存储记录的运动数据'},
+                {describe : '允许用户查看存储的运动数据'},
+                {describe : '允许用户注释运动数据'},
+            ],
+            demandEN:'In this exercise you are required to build an Android running tracking application, and\n' +
+                'document its design and architecture in a report. This is an assessed exercise and will account\n' +
+                'for 40% of your final module mark. This is an individual coursework, and your submission\n' +
+                'must be entirely your own work – please pay particular attention to the section of this\n' +
+                'document regarding plagiarism. This is a sizeable and open-ended coursework compared to\n' +
+                'the previous assessed exercises. This document sets out general requirements that your\n' +
+                'application should meet rather than specific instructions.\n\n' +
+                'The goal of this coursework is to design and implement a mobile application that functions as\n' +
+                'a basic Running Tracker, in that it should allow the user to track their movement when they\n' +
+                'decide to walk, run or jog, principally by logging the change in physical location using GPS.\n' +
+                'The application should allow the user to inspect this data in a useful manner. The user might\n' +
+                'expect to want to be able to ask simple questions of the data such as “how far have I run so\n' +
+                'far today?”, “how much have I improved?” or “have I run faster than my best time today?”.\n' +
+                'The application should allow the user to annotate their data. They might expect to be able to\n' +
+                'tag a particular exercise activity as good, or bad, or note something about the weather\n' +
+                'conditions, or they might want to associate a photograph with the exercise activity.\n\n' +
+                'At the minimum, your application should support:\n' +
+                '• Logging the movement of a user when they go running or walking\n' +
+                '• Saving the movement data in an appropriate manner\n' +
+                '• Allowing the user to inspect their data in an appropriate manner\n' +
+                '• Allowing the user to annotate their data in a useful manner\n' +
+                '• In principle allowing other applications to make use of the data',
+            imgList:[
+                {src:'../static/img/running tracker1.png'},
+                {src:'../static/img/running tracker2.png'},
+            ]
+        }
+    }
+})
+
 
 const router = new VueRouter({
     routes:[
