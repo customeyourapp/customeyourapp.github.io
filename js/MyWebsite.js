@@ -134,13 +134,66 @@ const runningTracker = Vue.component('',{
     }
 })
 
+const mp3Player = Vue.component('',{
+    template: '#project-template',
+    data(){
+        return{
+            title : 'Mp3 player',
+            describeLists:[
+                {describe : '从sdcard/Music文件夹读取音乐并播放'},
+                {describe : '允许用户停止或暂停音乐'},
+                {describe : '展示当前音乐播放进度'},
+                {describe : '注册安卓Service以在后台持续播放数据'},
+                {describe : '注册Notification在通知栏显示音乐播放情况'},
+            ],
+            demandEN:'You should create an application with the functionality of a simple music player for Android,\n' +
+                'which allows users to select from a number of music files stored on the SD card storage of the\n' +
+                'device to be played, and allows the music to continue to play in the background while the\n' +
+                'user performs other tasks.\n' +
+                'Your application must consist of:\n\n' +
+                '• A single Activity presenting an interface for the user that:\n' +
+                'o Displays and allows the user to select from and play music files from the\n' +
+                '/sdcard/Music folder\n' +
+                'o Allows the user to stop or pause playback\n' +
+                'o Displays the current progress of the playback (i.e. the elapsed time)\n' +
+                '• A Service that provides continued playback in the background\n' +
+                '• A Notification that that is displayed while the music is playing\n\n' +
+                'You must implement a Service to handle the music-playing element of the application, as this\n' +
+                'is a long-running task and the user can be expected to leave the initial activity to perform\n' +
+                'other tasks. You should think carefully about the relationship between the Activity and Service\n' +
+                'in your application, and how these should be used appropriately to perform the task. There\n' +
+                'is no requirement that your service will be used remotely, i.e. you do not need to use AIDL\n\n' +
+                'A simple MP3Player class is provided that wraps a basic MediaPlayer object for loading and\n' +
+                'playing an MP3 file. It is left up to you to decide how best to design and implement an Activity\n' +
+                'for selecting and controlling the music playback.\n' +
+                'Your application must be written in Java or Kotlin and make use of the Android SDK. There\n' +
+                'are no requirements to target a specific Android API version, however you can assume that\n' +
+                'your application will be tested on an emulated device running Android API version 29\n' +
+                '(Android 10.0), 1080x1920: 420dpi. The range of different ways that the user might engage\n' +
+                'with the different elements of the task while also intermittently or for extended periods\n' +
+                'engaging with other tasks, and how well the application supports this, is also part of the\n' +
+                'assessment criteria.\n\n' +
+                'You should consider the following when implementing your application:\n' +
+                '• Appropriate use of Activities, Intents and appreciation of the Activity life-cycle\n' +
+                '• Appropriate use of Services, Notifications and management of the Service life-cycle\n' +
+                '• Appropriate communication between components\n' +
+                '• Your application should have appropriate comments and variable / class names, so\n' +
+                'that a reader can easily understand how it works at the code level',
+            imgList:[
+                {src:'../static/img/mp3 player1.png'},
+                {src:'../static/img/mp3 player2.png'},
+            ],
+        }
+    }
+})
 
 const router = new VueRouter({
     routes:[
+        {path: '/readme',component: readme},
         {path:'/areWeThereYet',component:areWeThereYet},
         {path:'/game2048',component: game2048},
         {path:'/cruddyPizza',component: cruddyPizza},
-        {path: '/readme',component: readme}
+        {path:'/runningTracker',component: runningTracker},
     ]
 })
 const vm = new Vue({
