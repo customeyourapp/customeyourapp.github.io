@@ -194,6 +194,7 @@ const router = new VueRouter({
         {path:'/game2048',component: game2048},
         {path:'/cruddyPizza',component: cruddyPizza},
         {path:'/runningTracker',component: runningTracker},
+        {path:'/mp3Player',component: mp3Player}
     ]
 })
 const vm = new Vue({
