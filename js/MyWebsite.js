@@ -187,6 +187,33 @@ const mp3Player = Vue.component('',{
     }
 })
 
+const simonPuzzle = Vue.component('',{
+    template : '#project-template',
+    data(){
+        return{
+            title : 'Simon Puzzle',
+            describeLists : [
+                {describe : '基于JavaFX的桌面游戏'},
+                {describe: '名为Simon puzzle的虚拟游戏'},
+                {describe: '持久化记录先前结果'},
+                {describe: '计分机制'},
+                {describe: '系统可以自动判断游戏胜负'},
+                {describe: '为所有类，方法提供JavaDoc'},
+                {describe: '编写单元测试'}
+            ],
+            demandEN : '收到的需求为翻译后的版本\n' +
+                '这个游戏叫做Simon\'s puzzle，它是一个虚构的游戏，所以谷歌搜索它的实现是没有意义的。Simon\'s puzzle是一款基于棋盘的游戏，它有一个4 x 4的网格和五种类型的棋子，可以放置在棋盘上的网格单元中，如图1所示。玩家有16个（4 x 4=16）棋子可以放在棋盘上，游戏的目标是放置所有棋子。如果玩家成功放置所有棋子，他们赢了，如果没有，他们输了（即，如果他们没有有效的移动）。确定移动是否有效的规则有：\n' +
+                '1.不得将任何部件放置在与相同类型部件相邻的网格单元中（对于随机生成的电路板，在初始电路板状态下也必须遵守此规则）。\n' +
+                '2.放置一块后，网格单元的标识将更改为该块。\n' +
+                '3.一旦放置，就无法拾取（从板上移除）。\n' +
+                '4.每种类型的件数受分布限制：2、3、3、4、4，即某些件数比其他件数少/多。您可以自由决定初始面板的分配方式。\n' +
+                '这些规则意味着可能无法完成拼图并赢得游戏：要么是初始的一组动作导致棋盘无法解，要么是，如果棋盘是随机生成的，则拼图可能没有解。\n',
+            imgList : [
+                {src:'../static/img/simon puzzle1.png'}
+            ],
+        }
+    },
+})
 const router = new VueRouter({
     routes:[
         {path: '/readme',component: readme},
@@ -194,7 +221,8 @@ const router = new VueRouter({
         {path:'/game2048',component: game2048},
         {path:'/cruddyPizza',component: cruddyPizza},
         {path:'/runningTracker',component: runningTracker},
-        {path:'/mp3Player',component: mp3Player}
+        {path:'/mp3Player',component: mp3Player},
+
     ]
 })
 const vm = new Vue({
